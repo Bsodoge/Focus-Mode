@@ -94,3 +94,11 @@ button:hover{
 	display: flex;
 	gap: 4px;
 }
+
+.error{
+	color: #800000;
+}
+
+.submit-link-container{
+	display: flex;
+}
