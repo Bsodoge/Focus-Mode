@@ -1,6 +1,7 @@
 let isToggled = false;
 let optionsToggled = false;
 let links = [];
+let displayLinks = [];
 let days = [];
 let startTime = new Date().toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"});
 let endTime = new Date().toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"});
@@ -10,6 +11,22 @@ let settings = {
     days,
     startTime,
     endTime
+}
+const specialChars = {
+	".": "\.",
+	"+": "\+",
+	"*": ".*",
+	"?": "\?",
+	"^": "\^",
+	"$": "\$",
+	"(": "\(",
+	")": "\)",
+	"[": "\[",
+	"]": "\]",
+	"{": "\{",
+	"}": "\}",
+	"|": "\|",
+	"/": "\/"
 }
 
 const buttonToggle = document.getElementById("button");
@@ -26,6 +43,8 @@ const addLink = (link) => {
         errorOutput.style.display = "block";
         return;
     }
+    displayLinks.push(link);
+    link = convertToRegex(link);
     if (!links.includes(link)) {
         links.push(link);
         errorOutput.style.display = "none";
@@ -58,7 +77,7 @@ const listLinks = () => {
     while(listContainer.hasChildNodes()){
         listContainer.removeChild(listContainer.firstChild);
     }
-    links.forEach((link, index) => {
+    displayLinks.forEach((link, index) => {
         const container = document.createElement("div");
         const span = document.createElement("span");
         const button = document.createElement("button");
@@ -91,6 +110,7 @@ const onOpen = () => {
         endTime = storageSettings.endTime;
         changeButtonText();
         listLinks();
+        changeTimeText();
         settings = storageSettings;
         browser.tabs.query({ active: true, currentWindow: true }, sendMessage);
     });
@@ -119,9 +139,21 @@ const handleDay = (button) => {
 }
 
 const handleTime = (input) => {
-    if(input.target.id === "start") startTime = input.target.value
-    if(input.target.id === "end") endTime = input.target.value
+    if(input.target.id === "start") startTime = input.target.value;
+    if(input.target.id === "end") endTime = input.target.value;
     setSettings();
+}
+
+const changeTimeText = () => {
+    startInput.value = startTime;
+    endInput.value = endTime;
+}
+
+const convertToRegex = (url) => {
+	for (const key in specialChars) {
+		if(url.includes(key)) url = url.replaceAll(key, specialChars[key]);
+	}
+	return new RegExp(url);
 }
 
 buttonToggle.addEventListener("click", () => browser.tabs.query({active: true, currentWindow: true}, toggleExtension));

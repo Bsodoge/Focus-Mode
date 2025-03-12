@@ -7,21 +7,21 @@ let settings = {
 }
 
 const applySettings = (storageSettings) => {
-	if (storageSettings.isToggled) settings = storageSettings; 
+	settings = storageSettings;
+	if(settings.isToggled) blockSite();
 }
 
-const blockSite = () => {
+const blockSite = () => { //fix midnight hours
 	const day = new Date().getDay();
 	const time = new Date().toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"});
-	console.log(time);
-	if(settings.links.includes(window.location.href) && settings.days.includes(day) && (time >= settings.startTime) && (time <= settings.endTime) ) close();
+	settings.links.forEach(link => {
+		if(link.exec(window.location.href) && settings.days.includes(day) && (time >= settings.startTime) && (time <= settings.endTime) && settings.isToggled) window.location.replace("https://duckduckgo.com/"); //we will redirect a better place later
+	})
 }
 
 const onLoad = async () => {
 	const storageSettings = await browser.storage.local.get(settings);
 	applySettings(storageSettings);
-	console.log(settings);
-	blockSite();
 }
 
 browser.runtime.onMessage.addListener(applySettings);
