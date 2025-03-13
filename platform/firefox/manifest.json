@@ -20,8 +20,12 @@
 	    "id": "Focus-Mode@bsodoge"
 	}
     },
+    "background": {
+        "scripts": ["/js/background.js"]
+    },
     "permissions": [
-        "storage"
+        "storage",
+        "tabs"
     ],
     "action": {
         "browser_style": true,

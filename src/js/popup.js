@@ -10,6 +10,7 @@ let settings = {
     links,
     days,
     startTime,
+    displayLinks,
     endTime
 }
 const specialChars = {
@@ -69,6 +70,7 @@ const changeButtonText = () => {
 
 const removeLink = (container) => {
     links = links.filter((link, id) => id != container.getAttribute("id"));
+    displayLinks = displayLinks.filter((link, id) => id != container.getAttribute("id"));
     container.remove();
     setSettings();
 }
@@ -96,6 +98,7 @@ const setSettings = () => {
         links,
         days,
         startTime,
+        displayLinks,
         endTime
     }
     browser.storage.local.set(settings);
@@ -108,6 +111,7 @@ const onOpen = () => {
         days = storageSettings.days;
         startTime = storageSettings.startTime;
         endTime = storageSettings.endTime;
+        displayLinks = storageSettings.displayLinks;
         changeButtonText();
         listLinks();
         changeTimeText();
