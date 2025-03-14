@@ -29,6 +29,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	width: 400px;
+	overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -55,6 +57,7 @@ table {
 
 .main{
     width: fit-content;
+	height: 450px;
     background-color: #181a19;
     padding: 20px 10px;
     display: flex;
@@ -101,4 +104,25 @@ button:hover{
 
 .submit-link-container{
 	display: flex;
+}
+
+.line{
+	border-top: 1px solid #ffff;
+}
+
+.link-list{
+	padding-top: 20px;
+}
+
+.link-list > * {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+
+.remove-button{
+	color: #000;
+	font-size: 1rem;
+	padding: 5px 10px;
 }
