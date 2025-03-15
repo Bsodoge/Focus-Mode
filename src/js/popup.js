@@ -84,6 +84,9 @@ const listLinks = () => {
         const span = document.createElement("span");
         const button = document.createElement("button");
         container.setAttribute("id", index);
+        button.innerText = "Remove";
+        span.classList.add("link-container");
+        button.classList.add("remove-button");
         button.addEventListener("click", () => removeLink(container));
         span.innerText = link;
         container.append(span);
@@ -115,6 +118,7 @@ const onOpen = () => {
         changeButtonText();
         listLinks();
         changeTimeText();
+        changeButtonState();
         settings = storageSettings;
         browser.tabs.query({ active: true, currentWindow: true }, sendMessage);
     });
@@ -131,13 +135,21 @@ const toggleExtension = (tabs) => {
     sendMessage(tabs);
 }
 
+const changeButtonState = () => {
+    daysContainer.childNodes.forEach((child) => {
+        if(days.includes(parseInt(child.id))) child.classList.add("active");
+    })
+}
+
 const handleDay = (button) => {
     givenDay = parseInt(button.target.id);
     if(days.includes(givenDay)){
         days = days.filter((day) => day != givenDay);
+        button.target.classList.remove("active");
         setSettings();
         return;
     }
+    button.target.classList.add("active");
     days.push(givenDay);
     setSettings();
 }

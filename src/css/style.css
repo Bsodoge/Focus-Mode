@@ -29,7 +29,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	width: 400px;
+	width: 450px;
 	overflow-x: hidden;
 }
 ol, ul {
@@ -57,7 +57,7 @@ table {
 
 .main{
     width: fit-content;
-	height: 450px;
+	max-height: 450px;
     background-color: #181a19;
     padding: 20px 10px;
     display: flex;
@@ -98,12 +98,31 @@ button:hover{
 	gap: 4px;
 }
 
+.days{
+	padding-top: 10px;
+}
+
 .error{
 	color: #800000;
 }
 
 .submit-link-container{
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	font-size: 1rem;
+	padding: 5px 10px;
+}
+
+.submit-link-container button{
+	flex: 0.5;
+}
+
+.submit-link-container input{
+	text-align: left;
+	flex: 2;
+	padding: 5px 2.5px;
 }
 
 .line{
@@ -111,7 +130,9 @@ button:hover{
 }
 
 .link-list{
-	padding-top: 20px;
+	height: 100px;
+	overflow-y: scroll;
+	padding: 5px 10px;
 }
 
 .link-list > * {
@@ -121,8 +142,21 @@ button:hover{
 	gap: 5px;
 }
 
+.link-container{
+	flex: 2;
+}
+
 .remove-button{
 	color: #000;
 	font-size: 1rem;
-	padding: 5px 10px;
+	flex: 0.5;
+}
+
+.bottom{
+	padding-top: 10px;
+}
+
+.active{
+	background-color: #800000;
+	color: #fff;
 }
