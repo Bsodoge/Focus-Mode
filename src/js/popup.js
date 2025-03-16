@@ -39,7 +39,7 @@ const startInput = document.getElementById("start");
 const endInput = document.getElementById("end");
 
 const addLink = (link) => {
-    if (links.includes(link)){
+    if (validateLink(link)){
         return;
     }
     displayLinks.push(link);
@@ -51,6 +51,11 @@ const addLink = (link) => {
     }
     linkInput.value = "";
 }
+
+const validateLink = (link) => {
+    return displayLinks.includes(link) || link == null || link.match(/^ *$/) !== null;
+}
+
 const changeButtonText = () => {
     if (!isToggled) {
         buttonToggle.innerText = "Activate";
