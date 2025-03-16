@@ -30,7 +30,8 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	overflow-x: hidden;
-	overflow-y: hidden;
+	min-height: 450px;
+	max-width: 450px;
 }
 ol, ul {
 	list-style: none;
@@ -52,7 +53,6 @@ table {
 
 *{
     color: #fff;
-	text-align: center;
 	font-family: "IBM Plex Mono", monospace;
 }
 
@@ -78,8 +78,6 @@ input{
 
 .main{
     width: fit-content;
-	max-height: 450px;
-	max-width: 450px;
     background-color: #181a19;
     padding: 20px 10px;
     display: flex;
@@ -90,14 +88,12 @@ input{
 
 .logo{
     text-align: center;
-	margin-top: 60px;
-	font-size: 0.75rem;
+	font-size: 0.6rem;
 }
 
 .time{
 	padding-top: 10px;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	gap: 5px;
 }
@@ -124,7 +120,6 @@ button:hover{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
 }
 
 .days-list{
@@ -137,10 +132,6 @@ button:hover{
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
-}
-
-.days > p {
-	text-align: left;
 }
 
 .error{
@@ -161,7 +152,6 @@ button:hover{
 }
 
 .submit-link-container input{
-	text-align: left;
 	flex: 2;
 	padding: 5px 2.5px;
 }
@@ -171,9 +161,9 @@ button:hover{
 }
 
 .link-list{
-	height: 100px;
+	height: 150px;
 	overflow-y: scroll;
-	padding: 5px 10px;
+	line-height: normal;
 }
 
 .link-list > * {
