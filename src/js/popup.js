@@ -61,11 +61,11 @@ function validateUrl(value) { //courtesy of https://stackoverflow.com/questions/
 const changeButtonText = () => {
     if (!isToggled) {
         buttonToggle.innerText = "Activate";
-        buttonToggle.classList.remove('activated');
+        buttonToggle.classList.remove('active');
         return;
     } 
     buttonToggle.innerText = "Deactivate";
-    buttonToggle.classList.add('activated')
+    buttonToggle.classList.add('active')
 }
 
 const removeLink = (container) => {

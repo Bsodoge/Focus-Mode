@@ -29,8 +29,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	width: 450px;
 	overflow-x: hidden;
+	overflow-y: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -53,11 +53,33 @@ table {
 *{
     color: #fff;
 	text-align: center;
+	font-family: "IBM Plex Mono", monospace;
+}
+
+button{
+	background-color: #484854;
+	color: #fff;
+	border: none;
+	border: 1px solid #484854;
+	font-size: 0.7rem;
+}
+
+button:hover{
+	background-color: #5c5c6a;
+}
+
+button:active{
+	background-color: #1b1b21;
+}
+
+input{
+	color: #000;
 }
 
 .main{
     width: fit-content;
 	max-height: 450px;
+	max-width: 450px;
     background-color: #181a19;
     padding: 20px 10px;
     display: flex;
@@ -68,15 +90,26 @@ table {
 
 .logo{
     text-align: center;
+	margin-top: 60px;
+	font-size: 0.75rem;
 }
 
 .time{
 	padding-top: 10px;
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
 }
 
-button, input{
-	color: #000;
+.time > input {
+	background-color: #23222b;
+	color: #fff;
+	border: 1px solid #4e4d54;
+}
+
+.time > input:hover {
+	cursor: text;
 }
 
 button{
@@ -101,6 +134,13 @@ button:hover{
 
 .days{
 	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.days > p {
+	text-align: left;
 }
 
 .error{
@@ -148,16 +188,25 @@ button:hover{
 }
 
 .remove-button{
-	color: #000;
 	font-size: 1rem;
 	flex: 0.5;
 }
 
 .bottom{
 	padding-top: 10px;
+	width: 100%;
 }
 
 .active{
-	background-color: #800000;
-	color: #fff;
+	background-color: #17161b;
+	border: 1px solid #0085f2;
+}
+
+.activate-button{
+ padding: 10px 5px;
+ font-size: 1.5rem;
+}
+
+.activate-button-container{
+	padding-top: 10px;
 }
