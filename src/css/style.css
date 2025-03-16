@@ -144,7 +144,7 @@ button:hover{
 	align-items: center;
 	gap: 5px;
 	font-size: 1rem;
-	padding: 5px 10px;
+	padding: 5px 0px;
 }
 
 .submit-link-container button{
