@@ -61,7 +61,7 @@ button{
 	color: #fff;
 	border: none;
 	border: 1px solid #484854;
-	font-size: 0.7rem;
+	font-size: 0.9rem;
 }
 
 button:hover{
@@ -164,6 +164,10 @@ button:hover{
 	height: 150px;
 	overflow-y: scroll;
 	line-height: normal;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	font-size: 0.9rem;
 }
 
 .link-list > * {
@@ -178,7 +182,6 @@ button:hover{
 }
 
 .remove-button{
-	font-size: 1rem;
 	flex: 0.5;
 }
 
@@ -193,10 +196,17 @@ button:hover{
 }
 
 .activate-button{
- padding: 10px 5px;
- font-size: 1.5rem;
+	padding: 10px 5px;
+	font-size: 1.5rem;
 }
 
 .activate-button-container{
 	padding-top: 10px;
+}
+
+.days-container{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: center;
 }
