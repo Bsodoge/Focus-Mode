@@ -1,3 +1,5 @@
+if(typeof browser === "undefined") browser = chrome;
+
 let isToggled = false;
 let optionsToggled = false;
 let links = [];
@@ -177,7 +179,7 @@ const convertToRegex = (url) => {
 	for (const key in specialChars) {
 		if(url.includes(key)) url = url.replaceAll(key, specialChars[key]);
 	}
-	return new RegExp(url);
+	return url;
 }
 
 buttonToggle.addEventListener("click", () => browser.tabs.query({active: true, currentWindow: true}, toggleExtension));
