@@ -182,6 +182,7 @@ const convertToRegex = (url) => {
 
 buttonToggle.addEventListener("click", () => browser.tabs.query({active: true, currentWindow: true}, toggleExtension));
 linkInputButton.addEventListener("click", () => addLink(linkInput.value));
+document.body.addEventListener("keydown", (e) => { if(e.key === "Enter") linkInputButton.click() });
 daysContainer.childNodes.forEach((child) => child.addEventListener("click", handleDay));
 startInput.addEventListener("change", handleTime);
 endInput.addEventListener("change", handleTime);
