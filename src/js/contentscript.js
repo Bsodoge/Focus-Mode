@@ -15,7 +15,7 @@ const blockSite = () => {
 	const day = new Date().getDay();
 	const time = new Date().toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"});
 	settings.links.forEach(link => {
-		if(link.exec(window.location.href) && settings.days.includes(day) && (time >= settings.startTime) && (time <= settings.endTime) && settings.isToggled) {
+		if(link.url.exec(window.location.href) && settings.days.includes(day) && (time >= settings.startTime) && (time <= settings.endTime) && settings.isToggled) {
 			browser.runtime.sendMessage({url: browser.runtime.getURL("html/page.html")});
 		}
 	})

@@ -42,18 +42,29 @@ const addLink = (link) => {
     if (validateLink(link)){
         return;
     }
-    displayLinks.push(link);
+    let id = self.crypto.randomUUID();
+    displayLinks.push(
+        {   
+            id: id,
+            url: link
+        }
+    );
     link = convertToRegex(link);
     if (!links.includes(link)) {
-        links.push(link);
+        links.push(
+            {   
+                id: id,
+                url: link
+            }
+        );
         listLinks();
         setSettings();
     }
     linkInput.value = "";
 }
 
-const validateLink = (link) => {
-    return displayLinks.includes(link) || link == null || link.match(/^ *$/) !== null;
+const validateLink = (givenLink) => {
+    return displayLinks.some((link) => link.url === givenLink) || givenLink == null || givenLink.match(/^ *$/) !== null;
 }
 
 const changeButtonText = () => {
@@ -66,9 +77,9 @@ const changeButtonText = () => {
     buttonToggle.classList.add('active')
 }
 
-const removeLink = (container) => {
-    links = links.filter((link, id) => id != container.getAttribute("id"));
-    displayLinks = displayLinks.filter((link, id) => id != container.getAttribute("id"));
+const removeLink = (givenId, container) => {
+    links = links.filter((link) => link.id != givenId);
+    displayLinks = displayLinks.filter((link) => link.id != givenId);
     container.remove();
     setSettings();
 }
@@ -81,12 +92,11 @@ const listLinks = () => {
         const container = document.createElement("div");
         const span = document.createElement("span");
         const button = document.createElement("button");
-        container.setAttribute("id", index);
         button.innerText = "Remove";
         span.classList.add("link-container");
         button.classList.add("remove-button");
-        button.addEventListener("click", () => removeLink(container));
-        span.innerText = link;
+        button.addEventListener("click", () => removeLink(link.id, container));
+        span.innerText = link.url;
         container.append(span);
         container.append(button);
         listContainer.append(container);
