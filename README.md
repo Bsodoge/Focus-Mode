@@ -19,7 +19,7 @@ This is an open-source project and all contributions are welcome at https://gith
 <h2>License</h2>
 MIT License
 
-Copyright (c) 2024 Bsodoge
+Copyright (c) 2025 Bsodoge
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
