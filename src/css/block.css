@@ -1,0 +1,14 @@
+*{
+	font-family: "IBM Plex Mono", monospace;
+    background-color: #181a19;
+    color: #fff;
+    text-align: center;
+}
+
+h1{
+    font-size: 5rem;
+}
+
+.logo{
+	font-size: 1rem;
+}
