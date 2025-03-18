@@ -14,7 +14,7 @@ Features:
 - Ability to block at certain times and days.
 - Ability to use wildcard to mass block certain sites e.g reddit.com/* will block all reddit links.
 
-This is an open-source project and all contributions are welcome at https://github.com/Bsodoge/Focus-Mode
+This is an open-source project and all contributions are welcome.
 
 <h2>License</h2>
 MIT License
