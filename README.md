@@ -3,6 +3,7 @@
 <p align="center">
     <a href="https://addons.mozilla.org/en-GB/firefox/addon/focus-mode-by-bsodoge/"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" alt="Get Focus Mode for Firefox"></a>
     <a href="https://chromewebstore.google.com/detail/jjogkcpcgaaifccbffjmincckliocaca"><img src="https://developer.chrome.com/static/docs/webstore/branding/image/206x58-chrome-web-bcb82d15b2486.png" alt="Get Focus Mode for Chromium"></a>
+    <a href="https://www.producthunt.com/posts/focus-mode-64af7680-42be-4c6a-b68a-51f6d02641f0?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-focus&#0045;mode&#0045;64af7680&#0045;42be&#0045;4c6a&#0045;b68a&#0045;51f6d02641f0" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=943178&theme=dark&t=1742412522365" alt="Focus&#0032;Mode - Block&#0032;distracting&#0032;sites&#0032;at&#0032;certain&#0032;times&#0032;and&#0032;certain&#0032;days&#0046; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 </p>
 
 ***
