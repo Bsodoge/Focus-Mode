@@ -34,14 +34,9 @@ const blockSite = () => {
 
 const onLoad = async () => {
 	const storageSettings = await browser.storage.local.get(settings);
-	console.log(storageSettings);
 	applySettings(storageSettings);
 }
-
-console.log("before");
 
 browser.runtime.onMessage.addListener(applySettings);
 
 onLoad();
-
-console.log("after");
