@@ -230,6 +230,7 @@ button:hover{
 .external-links{
 	display: flex;
 	justify-content: end;
+	padding-top: 10px;
 	width: 100%;
 	gap: 8px;
 }
