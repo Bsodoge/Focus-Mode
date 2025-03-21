@@ -162,6 +162,7 @@ button:hover{
 
 .link-list{
 	height: 130px;
+	width: 435px;
 	overflow-y: auto;
 	line-height: normal;
 	display: flex;
@@ -179,6 +180,9 @@ button:hover{
 
 .link-container{
 	flex: 2;
+	display: inline-block;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .remove-button{
