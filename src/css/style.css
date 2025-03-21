@@ -79,7 +79,7 @@ input{
 .main{
     width: fit-content;
     background-color: #181a19;
-    padding: 20px 10px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
