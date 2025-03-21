@@ -161,7 +161,7 @@ button:hover{
 }
 
 .link-list{
-	height: 150px;
+	height: 130px;
 	overflow-y: auto;
 	line-height: normal;
 	display: flex;
@@ -209,4 +209,23 @@ button:hover{
 	flex-wrap: wrap;
 	gap: 10px;
 	justify-content: center;
+}
+
+.external-link{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+}
+
+.external-link > img {
+	width: 25px;
+	height: 25px;
+}
+
+.external-links{
+	display: flex;
+	justify-content: end;
+	width: 100%;
+	gap: 8px;
 }
